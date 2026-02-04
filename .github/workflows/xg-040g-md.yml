@@ -32,7 +32,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v6
 
       - name: Setup environment dependencies
         env:
@@ -128,7 +128,7 @@ jobs:
           cd openwrt && make defconfig
 
       - name: Upload build config files
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
           name: build-config
           path: |
@@ -166,7 +166,7 @@ jobs:
           echo "FIRMWARE=$PWD" >> $GITHUB_ENV
 
       - name: Upload firmware artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v6
         if: env.UPLOAD_FIRMWARE == 'true'
         with:
           name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
