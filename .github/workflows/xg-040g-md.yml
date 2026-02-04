@@ -122,7 +122,7 @@ jobs:
         with:
           name: build-config
           path: |
-            openwrt/.config
+            config/xg-040g-md.config
             openwrt/feeds.conf.default
 
       - name: Download packages
